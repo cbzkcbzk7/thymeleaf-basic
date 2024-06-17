@@ -112,6 +112,31 @@ public class BasicController {
         addUsers(model);
         return "basic/each";
     }
+
+    @GetMapping("/condition")
+    public String conditon(Model model){
+        addUsers(model);
+        return "basic/condition";
+    }
+
+    @GetMapping("/comments")
+    public String comment(Model model){
+        model.addAttribute("data", "Spring!");
+        return "basic/comments";
+    }
+
+    @GetMapping("/block")
+    public String block(Model model){
+        addUsers(model);
+        return "basic/block";
+    }
+
+    @GetMapping("/javascript")
+    public String javascript(Model model){
+        model.addAttribute("user", new User("UesrA", 10));
+        addUsers(model);
+        return "basic/javascript";
+    }
     private void addUsers(Model model) {
         List<User> list = new ArrayList<>();
         list.add(new User("userA", 10));
